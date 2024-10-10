@@ -1,0 +1,23 @@
+.san-tayo-button {
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5);
+  border-radius: 11px;
+  padding: 12px 20px;
+  line-height: 24px;
+  color: #14387e;
+  box-shadow: 0 1px 2px rgba(0 0 0 / 2%), 0 4px 16px rgba(0 0 0 / 2%),
+    0 4px 24px rgba(0 0 0 / 2%);
+}
+
+.san-tayo-button:hover,
+.san-tayo-button:active {
+  background-image: linear-gradient(90deg, #e3d4e5, #e2ddd0, #cfe3dd);
+}
+
+.name {
+  color: #14387e;
+  font-weight: 700;
+}

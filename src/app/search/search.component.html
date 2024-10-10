@@ -1,0 +1,45 @@
+<div class="full-page-container d-flex">
+  <div class="center-container text-center">
+    @if (!isLoading()) {
+    <div>
+      @if (!randomRestaurant()) {
+      <div class="d-flex flex-column gap-48">
+        <div>
+          <button
+            class="san-tayo-button"
+            type="button"
+            (click)="generateRandomRestaurant(restaurants)"
+          >
+            San tayo?
+          </button>
+        </div>
+        <div>
+          <button
+            class="san-tayo-button"
+            type="button"
+            (click)="generateRandomRestaurantNearMe()"
+          >
+            Surprise me!
+          </button>
+        </div>
+      </div>
+      } @if (randomRestaurant() && randomRestaurant()?.url) {
+      <img
+        class="image-logo"
+        [src]="randomRestaurant()?.url"
+        alt="image-logo"
+        (click)="onReset()"
+      />
+      } @if (randomRestaurant() && !randomRestaurant()?.url) {
+      <app-result
+        [restaurant]="randomRestaurant()"
+        [origin]="originLocation()"
+        (reset)="onReset()"
+      />
+      }
+    </div>
+    } @else {
+    <app-loading />
+    }
+  </div>
+</div>
